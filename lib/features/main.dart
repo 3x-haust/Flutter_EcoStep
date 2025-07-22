@@ -1,6 +1,9 @@
 import 'package:eco_step/core/util/style/colors.dart';
 import 'package:eco_step/core/widgets/common/my_bottom_navigation_bar.dart';
-import 'package:eco_step/features/counter/presentation/views/counter_view.dart';
+import 'package:eco_step/features/home/presentation/views/home_view.dart';
+import 'package:eco_step/features/map/presentation/views/map_view.dart';
+import 'package:eco_step/features/todo/presentation/views/todo_view.dart';
+import 'package:eco_step/features/profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +23,10 @@ class _MainPageState extends State<MainPage> {
     super.initState();
     
     pages = [
-      const CounterView(),
+      const HomeView(),
+      const MapView(),
+      const TodoView(),
+      const ProfileView(),
     ];
   }
 

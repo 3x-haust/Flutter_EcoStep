@@ -1,11 +1,12 @@
 import 'package:eco_step/features/auth/domain/entities/user.dart';
 import 'package:eco_step/features/auth/domain/repositories/auth_repository.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final GoogleSignIn _googleSignIn = GoogleSignIn(
-    clientId: '175617267854-h0g9bm92abq7ugp0dc966a32bth1sn9p.apps.googleusercontent.com',
+    clientId: dotenv.env['GOOGLE_CLIENT_ID'],
   );
 
   @override

@@ -12,6 +12,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: "assets/config/.env");
   setupDependencies();
   runApp(const MainApp());
 }

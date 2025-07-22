@@ -156,4 +156,15 @@ class Typo {
       color: color ?? Theme.of(context).textTheme.bodyLarge?.color,
     );
   }
+
+  static TextStyle logo(BuildContext context, {Color? color}) {
+    return TextStyle(
+      fontFamily: 'ClimateCrisis',
+      fontSize: 36,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w400,
+      height: 1.0,
+      color: color ?? Theme.of(context).textTheme.bodyLarge?.color,
+    );
+  }
 }
