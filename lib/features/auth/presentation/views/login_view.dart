@@ -23,24 +23,29 @@ class LoginView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: ConstrainedBox(
               constraints: BoxConstraints(
-                minHeight: MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom,
+                minHeight:
+                    MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).padding.top -
+                    MediaQuery.of(context).padding.bottom,
               ),
               child: Column(
                 children: [
                   const SizedBox(height: 140),
-                  
+
                   _buildLogoSection(context),
-                  
+
                   const SizedBox(height: 203),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Obx(() => GoogleSignInButton(
-                      onTap: loginViewModel.signInWithGoogle,
-                      isLoading: loginViewModel.isLoading,
-                      isDarkMode: isDarkMode,
-                    )),
+                    child: Obx(
+                      () => GoogleSignInButton(
+                        onTap: loginViewModel.signInWithGoogle,
+                        isLoading: loginViewModel.isLoading,
+                        isDarkMode: isDarkMode,
+                      ),
+                    ),
                   ),
-                  
+
                   const SizedBox(height: 177),
                   Obx(() {
                     if (loginViewModel.errorMessage.isNotEmpty) {
@@ -48,7 +53,10 @@ class LoginView extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 16),
                         child: Text(
                           loginViewModel.errorMessage,
-                          style: Typo.labelRegular(context, color: const Color(0xFFFF6B6B)),
+                          style: Typo.labelRegular(
+                            context,
+                            color: const Color(0xFFFF6B6B),
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       );
@@ -64,25 +72,20 @@ class LoginView extends StatelessWidget {
     );
   }
 
-
-
   Widget _buildLogoSection(BuildContext context) {
     final colors = ThemeColors.of(context);
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Column(
       children: [
         Container(
           width: 130,
           height: 146.91,
-          child: Image.asset(
-            'assets/images/step.png',
-            fit: BoxFit.contain,
-          ),
+          child: SvgPicture.asset('assets/images/step.svg', fit: BoxFit.contain),
         ),
-        
+
         const SizedBox(height: 24),
-        
+
         Text(
           'Eco Step',
           textAlign: TextAlign.center,
@@ -98,8 +101,4 @@ class LoginView extends StatelessWidget {
       ],
     );
   }
-
-
-
-
 }

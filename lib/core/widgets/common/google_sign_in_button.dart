@@ -64,7 +64,7 @@ class GoogleSignInButton extends StatelessWidget {
       width: 20,
       height: 20,
       child: SvgPicture.asset(
-        'assets/images/google_icon_new.svg',
+        'assets/images/google.svg',
         width: 20,
         height: 20,
       ),

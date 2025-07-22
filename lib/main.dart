@@ -52,7 +52,7 @@ class _MainAppState extends State<MainApp> {
         home: Container(),
         theme: initThemeData(brightness: Brightness.light),
         darkTheme: initThemeData(brightness: Brightness.dark),
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.system,
       );
     }
     
@@ -73,7 +73,7 @@ class _MainAppState extends State<MainApp> {
       debugShowCheckedModeBanner: false,
       theme: initThemeData(brightness: Brightness.light),
       darkTheme: initThemeData(brightness: Brightness.dark),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
     );
   }
 }
