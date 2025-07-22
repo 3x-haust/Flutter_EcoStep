@@ -1,34 +1,53 @@
 import 'package:eco_step/features/auth/domain/entities/user.dart';
 import 'package:eco_step/features/auth/domain/repositories/auth_repository.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter/foundation.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
-  User? _currentUser;
+  final GoogleSignIn _googleSignIn = GoogleSignIn(
+    clientId: '175617267854-h0g9bm92abq7ugp0dc966a32bth1sn9p.apps.googleusercontent.com',
+  );
 
   @override
   Future<User?> signInWithGoogle() async {
-    await Future.delayed(const Duration(seconds: 2));
-    
-    _currentUser = const User(
-      id: '1',
-      email: 'user@example.com',
-      name: 'Test User',
-    );
-    
-    return _currentUser;
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser == null) {
+        return null;
+      }
+      return User(
+        id: googleUser.id,
+        email: googleUser.email,
+        name: googleUser.displayName ?? '',
+        profileImageUrl: googleUser.photoUrl,
+      );
+    } catch (e) {
+      debugPrint('Google Sign-In Error: $e');
+      return null;
+    }
   }
 
   @override
   Future<void> signOut() async {
-    _currentUser = null;
+    await _googleSignIn.signOut();
   }
 
   @override
   Future<User?> getCurrentUser() async {
-    return _currentUser;
+    final GoogleSignInAccount? googleUser = await _googleSignIn.signInSilently();
+    if (googleUser != null) {
+      return User(
+        id: googleUser.id,
+        email: googleUser.email,
+        name: googleUser.displayName ?? '',
+        profileImageUrl: googleUser.photoUrl,
+      );
+    }
+    return null;
   }
 
   @override
   Stream<User?> get authStateChanges {
-    return Stream.value(_currentUser);
+    return const Stream<User?>.empty();
   }
 }

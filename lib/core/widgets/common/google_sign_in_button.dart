@@ -46,7 +46,7 @@ class GoogleSignInButton extends StatelessWidget {
               _buildGoogleIcon(),
               const SizedBox(width: 10),
               Text(
-                'login with Google',
+                '구글로 로그인',
                 style: Typo.bodyStrong(
                   context,
                   color: colors.gray900,
