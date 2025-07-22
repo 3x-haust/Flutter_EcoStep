@@ -1,5 +1,7 @@
 import 'package:eco_step/core/di/injection.dart';
 import 'package:eco_step/core/util/style/theme.dart';
+import 'package:eco_step/features/auth/presentation/bindings/login_binding.dart';
+import 'package:eco_step/features/auth/presentation/views/login_view.dart';
 import 'package:eco_step/features/counter/presentation/bindings/counter_binding.dart';
 import 'package:eco_step/features/counter/presentation/views/counter_view.dart';
 import 'package:eco_step/features/main.dart';
@@ -35,8 +37,9 @@ class _MainAppState extends State<MainApp> {
 
   Future<void> _checkLoginStatus() async {
     await Future.delayed(const Duration(seconds: 2));
+
     setState(() {
-      isLoggedIn = true;
+      isLoggedIn = false;
       isLoading = false;
     });
   }
@@ -59,6 +62,11 @@ class _MainAppState extends State<MainApp> {
           name: '/',
           page: () => const MainPage(),
           binding: CounterBinding(),
+        ),
+        GetPage(
+          name: '/login',
+          page: () => const LoginView(),
+          binding: LoginBinding(),
         ),
       ],
       initialRoute: isLoggedIn ? '/' : '/login',

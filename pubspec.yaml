@@ -30,7 +30,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/icons/
+    - assets/images/
     - assets/config/.env
   fonts:
     - family: Pretendard
@@ -53,6 +53,10 @@ flutter:
           weight: 800
         - asset: assets/fonts/Pretendard-Black.ttf
           weight: 900
+    - family: ClimateCrisis
+      fonts:
+        - asset: assets/fonts/ClimateCrisis-Regular-VariableFont_YEAR.ttf
+          weight: 400
 
 flutter_icons:
   android: true
