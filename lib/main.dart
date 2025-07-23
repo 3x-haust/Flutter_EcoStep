@@ -12,16 +12,15 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await dotenv.load(fileName: "assets/config/.env");
+  await dotenv.load(fileName: "assets/config/.env");
   setupDependencies();
   runApp(const MainApp());
 }
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
-  
+
   @override
-  // ignore: library_private_types_in_public_api
   _MainAppState createState() => _MainAppState();
 }
 
@@ -55,7 +54,7 @@ class _MainAppState extends State<MainApp> {
         themeMode: ThemeMode.system,
       );
     }
-    
+
     return GetMaterialApp(
       getPages: [
         GetPage(

@@ -24,6 +24,7 @@ class ThemeColors {
   final Color secondary;
   final Color tertiary;
   final Color background;
+  final Color error;
 
 
   ThemeColors({
@@ -50,6 +51,7 @@ class ThemeColors {
     required this.secondary,
     required this.tertiary,
     required this.background,
+    required this.error,
   });
 
   static ThemeColors of(BuildContext context) {
@@ -79,6 +81,7 @@ class ThemeColors {
       secondary: const Color(0xFF1E9F69),
       tertiary: const Color(0xFF2E7155),
       background: isDarkMode ? const Color(0xFF2C2B28) : const Color(0xFFF8FAED),
+      error: const Color(0xFFFF6B6B),
     );
   }
 }

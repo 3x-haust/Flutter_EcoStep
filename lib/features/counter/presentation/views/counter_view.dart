@@ -1,3 +1,4 @@
+import 'package:eco_step/core/util/style/typography.dart';
 import 'package:eco_step/features/counter/presentation/viewmodels/counter_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,18 +18,15 @@ class CounterView extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   'Counter Value:',
-                  style: TextStyle(fontSize: 24),
+                  style: Typo.titleRegular(context),
                 ),
                 const SizedBox(height: 20),
                 Obx(() => Text(
-                  '${viewModel.counter.value}',
-                  style: const TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )),
+                      '${viewModel.counter.value}',
+                      style: Typo.displayStrong(context),
+                    )),
                 const SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

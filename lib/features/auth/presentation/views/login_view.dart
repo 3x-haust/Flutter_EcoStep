@@ -55,7 +55,7 @@ class LoginView extends StatelessWidget {
                           loginViewModel.errorMessage,
                           style: Typo.labelRegular(
                             context,
-                            color: const Color(0xFFFF6B6B),
+                            color: colors.error,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -89,14 +89,7 @@ class LoginView extends StatelessWidget {
         Text(
           'Eco Step',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'ClimateCrisis',
-            fontSize: 36,
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            height: 1.0,
-            color: colors.primary,
-          ),
+          style: Typo.logo(context, color: colors.primary),
         ),
       ],
     );
