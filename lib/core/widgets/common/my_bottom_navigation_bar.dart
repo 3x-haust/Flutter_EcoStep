@@ -1,5 +1,6 @@
 import 'package:eco_step/core/util/style/colors.dart';
 import 'package:eco_step/core/util/style/typography.dart';
+import 'package:eco_step/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,6 +15,7 @@ class MyBottomNavigationBar extends StatefulWidget {
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyBottomNavigationBarState createState() => _MyBottomNavigationBarState();
 }
 
@@ -21,12 +23,11 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     final colors = ThemeColors.of(context);
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      height: 170,
+      height: 136,
       decoration: BoxDecoration(
-        color: isDark ? colors.gray20 : colors.gray700,
+        color: colors.gray20,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -42,33 +43,34 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _buildNavItem(
               context,
               index: 0,
-              iconPath: 'assets/images/home.svg',
+              iconPath: Assets.icons.home.path,
               label: 'Home',
               isSelected: widget.currentIndex == 0,
             ),
             _buildNavItem(
               context,
               index: 1,
-              iconPath: 'assets/images/map.svg',
+              iconPath: Assets.icons.map.path,
               label: 'Map',
               isSelected: widget.currentIndex == 1,
             ),
             _buildNavItem(
               context,
               index: 2,
-              iconPath: 'assets/images/todo.svg',
-              label: 'Todo',
+              iconPath: Assets.icons.history.path,
+              label: 'History',
               isSelected: widget.currentIndex == 2,
             ),
             _buildNavItem(
               context,
               index: 3,
-              iconPath: 'assets/images/profile.svg',
+              iconPath: Assets.icons.profile.path,
               label: 'Profile',
               isSelected: widget.currentIndex == 3,
             ),

@@ -1,5 +1,6 @@
 import 'package:eco_step/core/util/style/colors.dart';
 import 'package:eco_step/core/util/style/typography.dart';
+import 'package:eco_step/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -64,7 +65,7 @@ class GoogleSignInButton extends StatelessWidget {
       width: 20,
       height: 20,
       child: SvgPicture.asset(
-        'assets/images/google.svg',
+        Assets.icons.google.path,
         width: 20,
         height: 20,
       ),
