@@ -13,7 +13,6 @@ dependencies:
   flutter_gen: ^5.11.0
   flutter_launcher_icons: ^0.14.4
   flutter_svg: ^2.2.0
-  freezed_annotation: ^3.1.0
   get: ^4.7.2
   get_it: ^8.0.3
   injectable: ^2.5.0
@@ -27,11 +26,12 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   build_runner: ^2.6.0
   freezed: ^3.2.0
+  flutter_gen_runner: ^5.11.0
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
+    - assets/icons/
     - assets/config/.env
   fonts:
     - family: Pretendard
@@ -64,3 +64,8 @@ flutter_icons:
   ios: true
   image_path: "assets/icons/app_icon.png"
   remove_alpha_ios: true
+
+flutter_gen:
+  output: lib/gen/
+  integrations:
+    flutter_svg: true

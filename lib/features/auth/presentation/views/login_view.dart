@@ -2,6 +2,7 @@ import 'package:eco_step/core/util/style/colors.dart';
 import 'package:eco_step/core/util/style/typography.dart';
 import 'package:eco_step/core/widgets/common/google_sign_in_button.dart';
 import 'package:eco_step/features/auth/presentation/viewmodels/login_viewmodel.dart';
+import 'package:eco_step/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,6 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = ThemeColors.of(context);
     final loginViewModel = Get.find<LoginViewModel>();
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       backgroundColor: colors.background,
@@ -41,7 +41,6 @@ class LoginView extends StatelessWidget {
                       () => GoogleSignInButton(
                         onTap: loginViewModel.signInWithGoogle,
                         isLoading: loginViewModel.isLoading,
-                        isDarkMode: isDarkMode,
                       ),
                     ),
                   ),
@@ -55,7 +54,7 @@ class LoginView extends StatelessWidget {
                           loginViewModel.errorMessage,
                           style: Typo.labelRegular(
                             context,
-                            color: colors.error,
+                            color: colors.negative,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -74,14 +73,13 @@ class LoginView extends StatelessWidget {
 
   Widget _buildLogoSection(BuildContext context) {
     final colors = ThemeColors.of(context);
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Column(
       children: [
-        Container(
+        SizedBox(
           width: 130,
           height: 146.91,
-          child: SvgPicture.asset('assets/images/step.svg', fit: BoxFit.contain),
+          child: SvgPicture.asset(Assets.icons.logo.path, fit: BoxFit.contain),
         ),
 
         const SizedBox(height: 24),
