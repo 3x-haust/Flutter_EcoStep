@@ -49,8 +49,12 @@ app.*.map.json
 **/GoogleService-Info.plist
 
 # Environment variables
-**/.env
+.env
 .env.local
 .env.*.local
 
 .cursor/
+
+firebase.json
+.github
+firebase_options.dart

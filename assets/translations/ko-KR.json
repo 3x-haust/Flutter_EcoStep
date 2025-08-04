@@ -1,0 +1,37 @@
+{
+    "home": {
+        "todayNews": "오늘의 뉴스",
+        "daySelector": {
+            "sunday": "일",
+            "monday": "월",
+            "tuesday": "화",
+            "wednesday": "수",
+            "thursday": "목",
+            "friday": "금",
+            "saturday": "토"
+        },
+        "newsNotRead": "뉴스 읽으러 가기",
+        "quizInProgress": "퀴즈 풀러 가기",
+        "quizCompleted": "기후 미션 하러 가기"
+    },
+    "history": {
+        "title": "기록"
+    },
+    "profile": {
+        "languageSetting": "언어 설정",
+        "logout": "로그아웃",
+        "pointTitle": "내 포인트"
+    },
+    "navbar": {
+        "home": "홈",
+        "map": "지도",
+        "history": "기록",
+        "profile": "프로필",
+        "news": "뉴스"
+    },
+    "news": {
+        "todayNews": "오늘의 뉴스",
+        "takeQuiz": "퀴즈 풀기",
+        "goToQuizzer": "퀴즈 도전하기"
+    }
+}

@@ -1,6 +1,8 @@
 import 'package:eco_step/features/profile/domain/entities/profile.dart';
 import 'package:eco_step/features/profile/domain/usecases/get_current_profile_usecase.dart';
 import 'package:eco_step/features/profile/domain/usecases/sign_out_usecase.dart';
+import 'package:eco_step/features/profile/presentation/widgets/profile_card.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileViewModel extends GetxController {
@@ -58,6 +60,10 @@ class ProfileViewModel extends GetxController {
   }
 
   void onEditProfile() {
-    Get.toNamed('/profile/edit');
+    showModalBottomSheet(
+      context: Get.context!,
+      isScrollControlled: true,
+      builder: (context) => const LanguageSelectionBottomSheet(),
+    );
   }
 }

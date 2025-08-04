@@ -1,0 +1,22 @@
+{
+    "history": {
+        "title": "History"
+    },
+    "profile": {
+        "languageSetting": "Language Setting",
+        "logout": "Logout",
+        "pointTitle": "My Point"
+    },
+    "navbar": {
+        "home": "Home",
+        "map": "Map",
+        "history": "History",
+        "profile": "Profile",
+        "news": "News"
+    },
+    "news": {
+        "todayNews": "Today News",
+        "takeQuiz": "Take the quiz",
+        "goToQuizzer": "Go to the quizzer"
+    }
+}

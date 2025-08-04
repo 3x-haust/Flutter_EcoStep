@@ -7,17 +7,40 @@ import 'package:eco_step/features/bindings/main_binding.dart';
 import 'package:eco_step/features/main.dart';
 import 'package:eco_step/features/profile/presentation/bindings/profile_binding.dart';
 import 'package:eco_step/features/profile/presentation/views/profile_view.dart';
+import 'package:eco_step/firebase_options.dart';
 import 'package:eco_step/gen/assets.gen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await dotenv.load(fileName: Assets.config.aEnv);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   setupDependencies();
-  runApp(const MainApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('ko', 'KR'),
+        Locale('en', 'US'),
+        Locale('bn', 'BD'),
+        Locale('uz', 'UZ'),
+        Locale('th', 'TH'),
+        Locale('fil', 'PH'),
+        Locale('rw', 'RW'),
+        Locale('id', 'ID'),
+      ],
+      path: 'assets/translations',
+      fallbackLocale: const Locale('en', 'US'),
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatefulWidget {
@@ -90,6 +113,9 @@ class _MainAppState extends State<MainApp> {
       theme: initThemeData(brightness: Brightness.light),
       darkTheme: initThemeData(brightness: Brightness.dark),
       themeMode: ThemeMode.system,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
     );
   }
 }
