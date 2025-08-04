@@ -32,8 +32,6 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {   
-    ThemeColors colors = ThemeColors.of(context); 
-
     return Scaffold(
       extendBody: true,
       body: pages[_currentIndex],
