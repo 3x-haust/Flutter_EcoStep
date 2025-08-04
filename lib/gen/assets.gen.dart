@@ -27,9 +27,24 @@ class $AssetsConfigGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/add_photo.svg
+  SvgGenImage get addPhoto => const SvgGenImage('assets/icons/add_photo.svg');
+
+  /// File path: assets/icons/arrow_back.svg
+  SvgGenImage get arrowBack => const SvgGenImage('assets/icons/arrow_back.svg');
+
   /// File path: assets/icons/arrow_forward.svg
   SvgGenImage get arrowForward =>
       const SvgGenImage('assets/icons/arrow_forward.svg');
+
+  /// File path: assets/icons/bbc.svg
+  SvgGenImage get bbc => const SvgGenImage('assets/icons/bbc.svg');
+
+  /// File path: assets/icons/fire_off.svg
+  SvgGenImage get fireOff => const SvgGenImage('assets/icons/fire_off.svg');
+
+  /// File path: assets/icons/fire_on.svg
+  SvgGenImage get fireOn => const SvgGenImage('assets/icons/fire_on.svg');
 
   /// File path: assets/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
@@ -40,8 +55,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
 
+  /// File path: assets/icons/language.svg
+  SvgGenImage get language => const SvgGenImage('assets/icons/language.svg');
+
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
+
+  /// File path: assets/icons/logout.svg
+  SvgGenImage get logout => const SvgGenImage('assets/icons/logout.svg');
 
   /// File path: assets/icons/map.svg
   SvgGenImage get map => const SvgGenImage('assets/icons/map.svg');
@@ -57,11 +78,18 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+    addPhoto,
+    arrowBack,
     arrowForward,
+    bbc,
+    fireOff,
+    fireOn,
     google,
     history,
     home,
+    language,
     logo,
+    logout,
     map,
     person,
     profile,
@@ -69,11 +97,43 @@ class $AssetsIconsGen {
   ];
 }
 
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/bn-BD.json
+  String get bnBD => 'assets/translations/bn-BD.json';
+
+  /// File path: assets/translations/en-US.json
+  String get enUS => 'assets/translations/en-US.json';
+
+  /// File path: assets/translations/fil-PH.json
+  String get filPH => 'assets/translations/fil-PH.json';
+
+  /// File path: assets/translations/id-ID.json
+  String get idID => 'assets/translations/id-ID.json';
+
+  /// File path: assets/translations/ko-KR.json
+  String get koKR => 'assets/translations/ko-KR.json';
+
+  /// File path: assets/translations/rw-RW.json
+  String get rwRW => 'assets/translations/rw-RW.json';
+
+  /// File path: assets/translations/th-TH.json
+  String get thTH => 'assets/translations/th-TH.json';
+
+  /// File path: assets/translations/uz-UZ.json
+  String get uzUZ => 'assets/translations/uz-UZ.json';
+
+  /// List of all assets
+  List<String> get values => [bnBD, enUS, filPH, idID, koKR, rwRW, thTH, uzUZ];
+}
+
 class Assets {
   const Assets._();
 
   static const $AssetsConfigGen config = $AssetsConfigGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class SvgGenImage {
