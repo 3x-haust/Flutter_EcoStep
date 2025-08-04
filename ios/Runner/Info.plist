@@ -45,6 +45,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<!-- 카메라 및 사진 라이브러리 권한 -->
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to camera to take photos for climate missions.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photo library to select photos for climate missions.</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
