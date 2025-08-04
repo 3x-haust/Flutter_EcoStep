@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eco_step/core/util/style/colors.dart';
 import 'package:eco_step/core/util/style/typography.dart';
 import 'package:eco_step/gen/assets.gen.dart';
@@ -50,28 +51,28 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
               context,
               index: 0,
               iconPath: Assets.icons.home.path,
-              label: 'Home',
+              label: context.tr('navbar.home'),
               isSelected: widget.currentIndex == 0,
             ),
             _buildNavItem(
               context,
               index: 1,
               iconPath: Assets.icons.map.path,
-              label: 'Map',
+              label: context.tr('navbar.map'),
               isSelected: widget.currentIndex == 1,
             ),
             _buildNavItem(
               context,
               index: 2,
               iconPath: Assets.icons.history.path,
-              label: 'History',
+              label: context.tr('navbar.history'),
               isSelected: widget.currentIndex == 2,
             ),
             _buildNavItem(
               context,
               index: 3,
               iconPath: Assets.icons.profile.path,
-              label: 'Profile',
+              label: context.tr('navbar.profile'),
               isSelected: widget.currentIndex == 3,
             ),
           ],
@@ -98,7 +99,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
+            SizedBox(
               width: 30,
               height: 30,
               child: SvgPicture.asset(

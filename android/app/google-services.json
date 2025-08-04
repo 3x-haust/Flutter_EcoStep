@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "175617267854",
-    "project_id": "eco-step-project",
-    "storage_bucket": "eco-step-project.appspot.com"
+    "project_number": "749042750071",
+    "project_id": "ecostep-92e88",
+    "storage_bucket": "ecostep-92e88.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:175617267854:android:dummy",
+        "mobilesdk_app_id": "1:749042750071:android:7261406e83a2706bbaac72",
         "android_client_info": {
-          "package_name": "com.example.ecoStep"
+          "package_name": "io.github.a3xhaust.ecostep"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "175617267854-h0g9bm92abq7ugp0dc966a32bth1sn9p.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDummyKeyForDevelopment"
+          "current_key": "AIzaSyBmLV8C7-36-9gbKBY--I4T5xgYyHW3yuY"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "175617267854-h0g9bm92abq7ugp0dc966a32bth1sn9p.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

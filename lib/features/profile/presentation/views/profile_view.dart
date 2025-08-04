@@ -44,9 +44,9 @@ class ProfileView extends StatelessWidget {
           }
           
           return ProfileCard(
-            profile: viewModel.profile!,
-            onEditProfile: viewModel.onEditProfile,
+            profile: viewModel.profile!, 
             onSignOut: viewModel.signOut,
+            onEditProfile: viewModel.onEditProfile,
           );
         }),
       ),

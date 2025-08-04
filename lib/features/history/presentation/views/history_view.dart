@@ -5,6 +5,7 @@ import 'package:eco_step/features/history/presentation/widgets/history_item_widg
 import 'package:eco_step/features/history/presentation/widgets/history_skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HistoryView extends StatelessWidget {
   const HistoryView({super.key});
@@ -21,9 +22,9 @@ class HistoryView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
               child: Text(
-                '기록',
+                context.tr('history.title'),
                 style: Typo.titleStrong(context, color: colors.gray900),
               ),
             ),
