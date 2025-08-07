@@ -3,7 +3,6 @@ import 'package:eco_step/features/home/presentation/widgets/date_selector_widget
 import 'package:eco_step/core/util/app_state_manager.dart';
 import 'package:eco_step/features/quiz/presentation/views/quiz_page.dart';
 import 'package:eco_step/features/climate_mission/presentation/views/climate_mission_page.dart';
-import 'package:eco_step/features/lockscreen_quiz/presentation/controllers/lockscreen_quiz_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_step/core/util/style/colors.dart';
 import 'package:eco_step/core/util/style/typography.dart';
@@ -50,8 +49,6 @@ class HomeViewState extends State<HomeView> {
             AppStateManager.getButtonText() != 'done'
                 ? buildQuizSection(context, colors)
                 : Container(),
-            const SizedBox(height: 20),
-            buildLockscreenQuizTestSection(context, colors),
           ],
         ),
       ),
@@ -228,78 +225,6 @@ class HomeViewState extends State<HomeView> {
     );
   }
 
-  Widget buildLockscreenQuizTestSection(BuildContext context, ThemeColors colors) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Lockscreen Quiz Test',
-            style: Typo.titleStrong(context, color: colors.gray900),
-          ),
-          const SizedBox(height: 12),
-          Row(
-            children: [
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    final controller = Get.find<LockscreenQuizController>();
-                    controller.showRandomQuizNotification();
-                    Get.snackbar(
-                      'Test',
-                      'Lockscreen quiz notification sent!',
-                      backgroundColor: colors.primary,
-                      colorText: colors.background,
-                    );
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    decoration: BoxDecoration(
-                      color: colors.primary,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      'Show Quiz Notification',
-                      style: Typo.bodyStrong(context, color: colors.background),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    final controller = Get.find<LockscreenQuizController>();
-                    controller.startPeriodicQuizNotifications();
-                    Get.snackbar(
-                      'Test',
-                      'Periodic notifications started!',
-                      backgroundColor: colors.primary,
-                      colorText: colors.background,
-                    );
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    decoration: BoxDecoration(
-                      color: colors.gray600,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      'Start Periodic',
-                      style: Typo.bodyStrong(context, color: colors.background),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
 
   Widget buildQuizSection(BuildContext context, ThemeColors colors) {
     return GestureDetector(

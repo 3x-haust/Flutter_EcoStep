@@ -52,12 +52,20 @@ class ProfileCard extends StatelessWidget {
                             width: 58,
                             height: 58,
                             fit: BoxFit.cover,
+                          ),
+                        )
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(99),
+                          child: Image.asset(
+                            Assets.images.defaultProfile.path,
+                            width: 58,
+                            height: 58,
+                            fit: BoxFit.cover,
                             errorBuilder: (context, error, stackTrace) {
                               return _buildDefaultProfileIcon();
                             },
                           ),
                         )
-                      : _buildDefaultProfileIcon(),
                 ),
               ),
               const SizedBox(width: 12),
