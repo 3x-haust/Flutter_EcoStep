@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final GoogleSignIn _googleSignIn = GoogleSignIn(
-    clientId: dotenv.env['GOOGLE_CLIENT_ID'],
+    // serverClientId: dotenv.env['GOOGLE_CLIENT_ID'],
   );
 
   @override

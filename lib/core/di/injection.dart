@@ -12,11 +12,6 @@ import 'package:eco_step/features/profile/domain/repositories/profile_repository
 import 'package:eco_step/features/profile/domain/usecases/get_current_profile_usecase.dart';
 import 'package:eco_step/features/profile/domain/usecases/sign_out_usecase.dart';
 import 'package:eco_step/features/profile/presentation/viewmodels/profile_viewmodel.dart';
-import 'package:eco_step/features/lockscreen_quiz/data/datasources/lockscreen_quiz_local_datasource.dart';
-import 'package:eco_step/features/lockscreen_quiz/data/repositories/lockscreen_quiz_repository_impl.dart';
-import 'package:eco_step/features/lockscreen_quiz/domain/repositories/lockscreen_quiz_repository.dart';
-import 'package:eco_step/features/lockscreen_quiz/domain/usecases/lockscreen_quiz_usecases.dart';
-import 'package:eco_step/features/lockscreen_quiz/presentation/controllers/lockscreen_quiz_controller.dart';
 import 'package:get_it/get_it.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -73,30 +68,6 @@ void setupDependencies() {
     () => HomeViewModel(
       getIt<GetHistoryItemsUseCase>(),
       getIt<GetCurrentProfileUseCase>(),
-    ),
-  );
-
-  // Lockscreen Quiz dependencies
-  getIt.registerLazySingleton<LockscreenQuizLocalDataSource>(
-    () => LockscreenQuizLocalDataSource(),
-  );
-
-  getIt.registerLazySingleton<LockscreenQuizRepository>(
-    () => LockscreenQuizRepositoryImpl(getIt<LockscreenQuizLocalDataSource>()),
-  );
-
-  getIt.registerLazySingleton<GetTodayQuizzesUseCase>(
-    () => GetTodayQuizzesUseCase(getIt<LockscreenQuizRepository>()),
-  );
-
-  getIt.registerLazySingleton<SubmitQuizAnswerUseCase>(
-    () => SubmitQuizAnswerUseCase(getIt<LockscreenQuizRepository>()),
-  );
-
-  getIt.registerLazySingleton<LockscreenQuizController>(
-    () => LockscreenQuizController(
-      getTodayQuizzesUseCase: getIt<GetTodayQuizzesUseCase>(),
-      submitQuizAnswerUseCase: getIt<SubmitQuizAnswerUseCase>(),
     ),
   );
 }
